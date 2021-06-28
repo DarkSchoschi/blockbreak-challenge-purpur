@@ -1,6 +1,5 @@
 name: ExamplePlugin
-api-version: 1.16
-authors:
-  - You
-main: com.example.exampleplugin.ExamplePlugin
+api-version: 1.17
+author: DarkSchoschi
+main: de.schoschi.blockbreak.BlockBreakPlugin
 version: 1.0

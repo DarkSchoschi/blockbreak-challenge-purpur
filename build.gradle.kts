@@ -6,25 +6,25 @@ plugins {
     id("com.github.johnrengelman.shadow")
 }
 
-group = "org.example"
-version = "1.0"
+group = "de.schoschi"
+version = "1.1"
 
 repositories {
     mavenCentral()
-    mavenLocal()
+    maven { url = uri("https://papermc.io/repo/repository/maven-public/") }
     maven("https://repo.codemc.io/repository/maven-snapshots/")
 }
 
 val minecraft_version: String by project
-val kpaper_version: String by project
+val kspigot_version: String by project
 
 dependencies {
     // Spigot Dependency
     // https://www.spigotmc.org/wiki/buildtools/
-    compileOnly("com.destroystokyo.paper", "paper", "$minecraft_version-R0.1-SNAPSHOT") // Only used on compile time because we have a PaperMC Server so we don't need it in the final jar
+    compileOnly("io.papermc.paper:paper-api:$minecraft_version-R0.1-SNAPSHOT")
 
     // KSpigot dependency
-    implementation("de.mommde", "kpaper", kpaper_version)
+    implementation("net.axay", "kspigot", kspigot_version)
 
     // You can add Dependencies here
 }
